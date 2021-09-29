@@ -1,1 +1,64 @@
-EHHEHEHEHEHE
+#include <iostream>
+#include "windows.h"
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	/*int a; //Первая задача
+	std::cin » a;
+	if (1000 > a && a > 99) {
+	std::cout « "Yes";
+	}
+	else {
+	std::cout « "No";
+	}
+	*/
+
+
+
+	/*int a, b; //Вторая задача
+	std::cin » a » b;
+	if (a > 12 || b > 31) {
+	std::cout « "Wrong";
+	}
+	else if (a == 1 && b <= 31 && b > 0) {
+	std::cout « 365 - b;
+	}
+	else if (a == 2 && b <= 28 && b > 0) {
+	std::cout « 365 - 31 - (b);
+	}
+	else if (a == 3 && b <= 31 && b > 0) {
+	std::cout « 365 - 59 - b;
+	}
+	else if (a == 4 && b <= 30 && b > 0) {
+	std::cout « 365 - 90 - b;
+	}
+	else if (a == 5 && b <= 31 && b > 0) {
+	std::cout « 365 - 120 - b;
+	}
+	else if (a == 6 && b <= 30 && b > 0) {
+	std::cout « 365 - 151 - b;
+	}
+	else if (a == 7 && b <= 31 && b > 0) {
+	std::cout « 365 - 181 - b;
+	}
+	else if (a == 8 && b <= 31 && b > 0) {
+	std::cout « 365 - 212 - b;
+	}
+	else if (a == 9 && b <= 30 && b > 0) {
+	std::cout « 365 - 243 - b;
+	}
+	else if (a == 10 && b <= 31 && b > 0) {
+	std::cout « 365 - 273 - b;
+	}
+	else if (a == 11 && b <= 30 && b > 0) {
+	std::cout « 365 - 304 - b;
+	}
+	else if (a == 12 && b <= 31 && b > 0) {
+	std::cout « 365 - 334 - b;
+	}
+	*/
+
+
+
+}
