@@ -8,7 +8,7 @@ int main() {
 	int a;
 	std::cin >> a;
 	int b = a, counter = 0;
-	int desyat = 0;
+	int desyat = 0, tysyach = 0, milli = 0;
 
 	while (b != 0) {
 		counter++;
@@ -17,6 +17,12 @@ int main() {
 	// std::cout << counter << std::endl;
 	for (int i = counter; i >= 0; i--) {
 		int k = int(a / pow(10, i-1)) % 10;
+		if (k != 0 && i > 6) {
+			milli++;
+		}
+		else if (k != 0 && i > 3) {
+			tysyach++;
+		}
 		// Чек k элемента std::cout << k << std::endl;
 		if (i % 3 == 1 && desyat == 0) {
 			if (k == 1) {   //Тут единицы разрядов
@@ -56,26 +62,27 @@ int main() {
 			else if (k == 9) {
 				std::cout << "девять ";
 			}
-			if (i > 6 && k != 0) { // Чекаем на тысячи/миллионы/простые и виды написаний
+			if (i > 6) { // Чекаем на тысячи/миллионы/простые и виды написаний
 				if (k == 1) {
 					std::cout << "миллион ";
 				}
-				if (k < 5) {
+				else if (k < 5) {
 					std::cout << "миллиона ";
 				}
 				else {
 					std::cout << "миллионов ";
 				}
 			}
-			else if (i > 3 && k != 0) {
+			else if (i > 3) {
 				if (k == 1) {
 					std::cout << "тысяча ";
 				}
-				if (k < 5) {
+				else if (k < 5 && k != 0) {
 					std::cout << "тысячи ";
 				}
-				else {
+				else if (tysyach > 0){
 					std::cout << "тысяч ";
+					tysyach -= 10;
 				}
 			}
 
@@ -115,12 +122,15 @@ int main() {
 				else {
 					std::cout << "десять ";
 				}
-				if (i > 6 && cifri != 0) { // Чекаем на тысячи/миллионы/простые и виды написаний
+				if (i > 6 && milli > 0) { // Чекаем на тысячи/миллионы/простые и виды написаний
 					std::cout << "миллионов ";
+					milli -= 10;
 				}
-				else if (i > 3 && k != 0) {
+				else if (tysyach > 0) {
 					std::cout << "тысяч ";
+					tysyach -= 10;
 				}
+				
 			}
 			else if (k == 2) {
 				std::cout << "двадцать ";
@@ -178,6 +188,7 @@ int main() {
 			}
 			
 		}
+		
 
 		/*if (i > 6) {
 			if (i % 3 == 1) {
