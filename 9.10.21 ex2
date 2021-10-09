@@ -1,0 +1,33 @@
+// KFU.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+#include <iostream>
+#include <random>
+
+int fibbo(int n) {
+    if (n <= 2) {
+        return 1;
+    }
+    else {
+        int i = 2;
+        int counter = 1;
+        int a = 1;
+        int b = 1;
+        while (i < n) {
+            counter = a + b;
+            b = a;
+            a = counter;
+            i++;
+        }
+        return counter;
+    }
+}
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    int n;
+    std::cin >> n;
+    std::cout << fibbo(n);
+}
+
