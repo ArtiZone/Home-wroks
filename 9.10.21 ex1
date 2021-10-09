@@ -1,0 +1,16 @@
+#include <iostream>
+#include <random>
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    std::random_device rd;
+    std::mt19937 mersenne(rd());
+    #include <random>
+    int a = 1 + rand() % 6;
+    int b = 1 + rand() % 6;
+    std::cout << "Кубик 1: " << mersenne() % 6 << std::endl;
+    std::cout << "Кубик 2: " << mersenne() % 6;
+}
+
