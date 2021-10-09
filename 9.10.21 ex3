@@ -1,0 +1,32 @@
+#include <iostream>
+#include <random>
+
+int fibbo(int n) {
+    int count = 0;
+    for (int i = 1; i < n; i++) {
+        if (n % i == 0) {
+            count += i;
+        }
+    }
+    return count;
+
+}
+
+
+int main()
+{
+    int counter = 0;
+    setlocale(LC_ALL, "Russian");
+    for (int i = 1; i < 10000; i++) {
+        int a = fibbo(i);
+        if (fibbo(a) == i) {
+            counter++;
+        }
+        if (i % 1000 == 0) {
+            std::cout << counter << " ";
+        }
+    }
+    std::cout << "Counter is : " << counter;
+
+}
+
