@@ -32,7 +32,7 @@ int main(void)
         }
         else
         {
-            for (int y = x + 2; y < 10000; y += 2) {
+            for (int y = x + 2; y < 7000; y += 2) {
                 b = deliteli(y);
                 if (a == y && b == x) {
                     std::cout << x << " " << y << std::endl;
