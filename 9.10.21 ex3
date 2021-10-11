@@ -1,35 +1,46 @@
 #include <iostream>
 #include <random>
 
-int delli(int n) {
-    int count = 0;
-    for (int i = 1; i < n; i++) {
-        if (n % i == 0) {
-            count += i;
-        }
-    }
-    if (n == 1) {
-        return 1;
-    }
-    return count;
+int deliteli(int n)
+{
+    int delli = 0;
 
+    for (int i = 1; i < n; i++)
+        if (n % i == 0)
+            delli += i;
+    return (delli);
 }
 
-
-int main()
+int main(void)
 {
-    int counter = 0;
     setlocale(LC_ALL, "Russian");
-    for (int i = 1; i < 10000; i++) {
-        int a = delli(i);
-        if (delli(a) == i) {
-            counter++;
+    int a = 0;
+    int b = 0;
+
+    for (int x = 2; x < 7000; x += 2)
+    {
+        a = deliteli(x);
+        if (x < 5000)
+        {
+            for (int y = x - 2; y > 0; y -= 2) {
+                b = deliteli(y);
+                if (a == y && b == x) {
+                    std::cout << x << " " << y << std::endl;
+                    break;
+                }
+            }
         }
-        if (i % 1000 == 0) {
-            std::cout << counter << " ";
+        else
+        {
+            for (int y = x + 2; y < 10000; y += 2) {
+                b = deliteli(y);
+                if (a == y && b == x) {
+                    std::cout << x << " " << y << std::endl;
+                    break;
+                }
+            }
         }
     }
-    std::cout << "Counter is : " << counter;
 
 }
 
