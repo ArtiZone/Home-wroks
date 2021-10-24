@@ -1,0 +1,38 @@
+#include <iostream>
+#include <stdio.h>
+#include <random>
+
+void print_array(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        std::cout << a[i] << " ";
+    }
+    
+    return;
+}
+
+
+int main()
+{
+    int inic;
+    setlocale(LC_ALL, "Russian");
+    std::random_device rd;
+    std::mt19937 mersenne(rd());
+    //std::cout << "Введите: размер массива, начальное значение и разность ";
+    std::cin >> inic;
+    int *a = new int[inic];
+    for (int i = 0; i < inic; i++) {
+        a[i] = i + 1;
+    }
+    int dop = 0;
+    int count = 0;
+    for (int i = 0; i < inic; i++) {
+        dop = mersenne() % inic;
+        count = a[dop];
+        
+        a[dop] = a[i];
+        //std::cout << a[dop] << " " << dop << "   " << a[i] << " " << i<< std::endl;
+        a[i] = count;
+        
+    }
+    print_array(a, inic);
+}
