@@ -1,0 +1,23 @@
+#include <iostream>
+#include <stdio.h>
+
+void print_array(int a[], int n) {
+    for (int i = 0; i < n; i++) {
+        std::cout << a[i] << " ";
+    }
+    
+    return;
+}
+int main()
+{
+    int inic, razn, first;
+    setlocale(LC_ALL, "Russian");
+    std::cout << "Введите: размер массива, начальное значение и разность ";
+    std::cin >> inic >> first >> razn;
+    int *a = new int[inic];
+    for (int i = 0; i < inic; i++) {
+        a[i] = first + i * razn;
+    }
+    print_array(a, inic);
+    std::cout << "Hello World!\n";
+}
