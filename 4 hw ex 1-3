@@ -86,6 +86,6 @@ int main()
         two();
     }
     else {
-
+        three();
     }
 }
