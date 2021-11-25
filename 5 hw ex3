@@ -1,0 +1,57 @@
+#include <iostream>
+void print_matrix(int** a, int n, int m) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            std::cout << a[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+
+}
+void print_matrix(int* a, int n) {
+    for (int i = 0; i < n; i++) {
+        std::cout << a[i] << " ";
+    }
+}
+
+
+
+void third_exercise(int** a, int n, int m) {
+    int* b = new int[m];
+    int counter = 0;
+    for (int j = 0; j < m; j++) {
+        for (int i = 0; i < n; i++) {
+            counter += a[i][j];
+        }
+        b[j] = counter;
+        counter = 0;
+    }
+    print_matrix(b, n);
+}
+
+void fill_matrix(int** a, int n, int m) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            a[i][j] = rand() % 10 + 1;
+        }
+        std::cout << std::endl;
+    }
+}
+
+
+int main()
+{
+    int n, m;
+    srand(time(0));
+    std::cin >> n >> m;
+    int** a = new int* [n];
+    for (int i = 0; i < n; i++) {
+        a[i] = new int[m];
+    }
+    fill_matrix(a, n, m);
+    print_matrix(a, n, m);
+    std::cout << std::endl;
+    third_exercise(a, n, m);
+    print_matrix(a, n, m);
+
+}
