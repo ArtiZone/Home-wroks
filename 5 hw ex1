@@ -1,4 +1,6 @@
 #include <iostream>
+
+
 void print_matrix(int** a, int n, int m) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
@@ -23,7 +25,6 @@ void fill_matrix(int** a, int n, int m) {
         for (int j = 0; j < m; j++) {
             a[i][j] = rand() % 30 + 1;
         }
-        std::cout << std::endl;
     }
 }
 
@@ -43,4 +44,8 @@ int main()
     first_exercise(a, 2, 3, n, m);
     print_matrix(a, n, m);
 
+    
+    for (int i = 0; i < n; i++) {
+        delete a[i];
+    }
 }
