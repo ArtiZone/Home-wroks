@@ -34,7 +34,6 @@ void fill_matrix(int** a, int n, int m) {
         for (int j = 0; j < m; j++) {
             a[i][j] = rand() % 10 + 1;
         }
-        std::cout << std::endl;
     }
 }
 
@@ -52,6 +51,13 @@ int main()
     print_matrix(a, n, m);
     std::cout << std::endl;
     third_exercise(a, n, m);
+    std::cout << std::endl;
+    std::cout << std::endl;
     print_matrix(a, n, m);
+    for (int i = 0; i < n; i++) {
+        delete a[i];
+    }
 
 }
+    
+
