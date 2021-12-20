@@ -75,7 +75,10 @@ void third_ex() {
 
 int main()
 {
-	//first_ex();
-	//second_ex();
-	//third_ex();
+
+	first_ex();
+	std::cin.get();
+	second_ex();
+	std::cin.get();
+	third_ex();
 }
