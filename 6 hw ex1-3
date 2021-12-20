@@ -21,17 +21,18 @@ void first_ex() {
 	if (counter == 0) {
 		std::cout << "Yes";
 	}
+	delete str;
 }
 
 void second_ex() {
 	int n = 20, g = 0, counter = 0;
 	char* str = new char[n];
-	
+
 	std::cin.get(str, n);
 	std::cout << str << std::endl;
 	int k = strlen(str);
 	//std::cout << int('0') << " " << int('9') << std::endl;
-	for (int i = k-1; i >= 0; i--) {
+	for (int i = k - 1; i >= 0; i--) {
 		if (str[i] != '+') {
 			counter += int(pow(10, g)) * (int(str[i]) - 48);
 			g++;
@@ -41,6 +42,7 @@ void second_ex() {
 		}
 	}
 	std::cout << counter;
+	delete str;
 }
 //Karimov Artur Albertovich
 void third_ex() {
@@ -63,16 +65,17 @@ void third_ex() {
 			g++;
 		}
 	}
-	
+
 	for (int i = 0; i < counter; i++) {
 		std::cout << str2[i];
 	}
-	
+	delete str;
+
 }
 
 int main()
 {
-	first_ex();
-	second_ex();
-	third_ex();
+	//first_ex();
+	//second_ex();
+	//third_ex();
 }
